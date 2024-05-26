@@ -1,0 +1,3 @@
+dos2unix combined.sh
+chmod +x combined.sh
+nohup ./combined.sh > combined.log &

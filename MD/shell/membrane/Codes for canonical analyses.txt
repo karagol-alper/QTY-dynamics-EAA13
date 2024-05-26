@@ -1,0 +1,23 @@
+gmx trjcat -f step7_1.trr step7_2.trr step7_3.trr step7_4.trr step7_5.trr step7_6.trr step7_7.trr step7_8.trr step7_9.trr step7_10.trr -settime -o fixed.trr
+
+sudo apt-get install grace
+gmx gyrate -f fixed.trr -s step7_1.tpr -o gyrate_fixedstep7.xvg
+grace -nxy gyrate_fixedstep7.xvg -hdevice PNG -hardcopy -printfile gyrate_fixedstep7.png
+
+gmx sasa -f fixed.trr -s step7_1.tpr -o sasa_fixedstep7.xvg
+gmx sasa -f step7_10.trr -s step7_10.tpr -o sasa_step710.xvg
+grace -nxy sasa_fixedstep7.xvg -hdevice PNG -hardcopy -printfile sasa_fixedstep7.png
+grace -nxy sasa_step710.xvg -hdevice PNG -hardcopy -printfile sasa_step710.png
+
+gmx rmsf -f fixed.trr -s step7_1.tpr -o rmsf_fixedstep7.xvg -oc correl_fixedstep7.xvg -oq bfac1_fixedstep7.pdb -ox xaver1_fixedstep7.pdb -dir rmsf_fixedstep7.log
+grace -nxy rmsf_fixedstep7.xvg -hdevice PNG -hardcopy -printfile rmsf_fixedstep7.png
+grace -nxy correl_fixedstep7.xvg -hdevice PNG -hardcopy -printfile correl_fixedstep7.png
+
+gmx traj -f fixed.trr -s step7_1.tpr -ox coordtraj_fixedstep7.xvg -ov velotraj_fixedstep7.xvg -of forcetraj_fixedstep7.xvg -cv velotraj_fixedstep7.pdb -cf forcetraj_fixedstep7.pdb 
+grace -nxy coordtraj_fixedstep7.xvg -hdevice PNG -hardcopy -printfile coordtraj_fixedstep7.png
+grace -nxy forcetraj_fixedstep7.xvg -hdevice PNG -hardcopy -printfile forcetraj_fixedstep7.png
+grace -nxy velotraj_fixedstep7.xvg -hdevice PNG -hardcopy -printfile velotraj_fixedstep7.png
+
+
+cd -
+./gdrive upload --parent 12qSX2pQpSds2QppzPGgwbr3sOguHMffl --recursive ./gromacscan250
