@@ -1,0 +1,51 @@
+mpm_entity_id: 7npw_default_dppc
+mpm_entity_type: simulations
+mpm_job_name: thinning
+mpm_job_version: '0.4'
+mpm_job_written: 1634430093
+thinning:
+  annular:
+    lower: 38.1893196105957
+    mid: 57.59022331237793
+    thickness: 38.80180740356445
+    upper: 76.99112701416016
+  bulk:
+    lower: 38.90103530883789
+    mid: 58.801008224487305
+    thickness: 39.79994583129883
+    upper: 78.70098114013672
+  shells:
+    lower:
+    - inner: 2.8
+      midpoint: 5.0
+      outer: 7.2
+      z:
+        lower: 38.17430079209792
+        mean: 38.1893196105957
+        upper: 38.20433842909349
+    - inner: 7.2
+      midpoint: 9.200000000000001
+      outer: 11.600000000000001
+      z:
+        lower: 38.05724224720277
+        mean: 38.07387161254883
+        upper: 38.090500977894884
+    upper:
+    - inner: 2.8999999999999995
+      midpoint: 5.0
+      outer: 7.1000000000000005
+      z:
+        lower: 76.9741749422398
+        mean: 76.99112701416016
+        upper: 77.00807908608051
+    - inner: 7.1000000000000005
+      midpoint: 9.0
+      outer: 11.600000000000001
+      z:
+        lower: 77.4512354319306
+        mean: 77.46967315673828
+        upper: 77.48811088154596
+  thinning:
+    lower: 0.7117156982421875
+    mean: -0.998138427734375
+    upper: -1.7098541259765625
