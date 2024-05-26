@@ -1,0 +1,9 @@
+set dot_solvent, 1
+set dot_density, 3
+get_area
+
+get_sasa_relative polymer
+
+
+
+spectrum b, red_white_blue, minimum=0, maximum=0.1
